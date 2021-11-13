@@ -22,6 +22,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.bonoogi.week2.layouts.MyOwnColumn
 import com.bonoogi.week2.ui.theme.Week2Theme
 
 class MainActivity : ComponentActivity() {
@@ -57,9 +58,11 @@ fun Week2() {
 
 @Composable
 fun BodyContent(modifier: Modifier = Modifier) {
-    Column(modifier = modifier) {
-        Text(text = "안녕 거기!")
-        Text(text = "레이아웃 코드랩을 진행해줘서 고맙소.")
+    MyOwnColumn(modifier.padding(8.dp)) {
+        Text("MyOwnColumn")
+        Text("places items")
+        Text("vertically.")
+        Text("We've done it by hand!")
     }
 }
 
