@@ -21,6 +21,8 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -56,9 +58,7 @@ fun Week2() {
             )
         }
     ) { innerPadding ->
-        BodyContent(modifier = Modifier
-            .padding(innerPadding)
-            .padding(8.dp))
+        BodyContent(modifier = Modifier.padding(innerPadding))
     }
 }
 
@@ -70,8 +70,13 @@ val topics = listOf(
 
 @Composable
 fun BodyContent(modifier: Modifier = Modifier) {
-    Row(modifier = modifier.horizontalScroll(rememberScrollState())) {
-        StaggeredGrid(modifier = modifier, rows = 5) {
+    Row(modifier = modifier
+        .background(color = Color.LightGray, shape = RectangleShape)
+        .padding(16.dp)
+        .size(200.dp)
+        .horizontalScroll(rememberScrollState())
+    ) {
+        StaggeredGrid {
             for (topic in topics) {
                 Chip(modifier = Modifier.padding(8.dp), text = topic)
             }
