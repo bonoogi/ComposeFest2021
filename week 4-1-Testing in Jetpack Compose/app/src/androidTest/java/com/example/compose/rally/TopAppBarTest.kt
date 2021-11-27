@@ -45,4 +45,40 @@ class TopAppBarTest {
             )
             .assertExists()
     }
+
+    @Test
+    fun rallyTopAppBarTest_changeSelection() {
+        composeTestRule.setContent {
+            RallyApp()
+        }
+        composeTestRule
+            .onNode(
+                hasContentDescription(RallyScreen.Overview.name)
+            )
+            .performClick()
+        composeTestRule
+            .onNode(
+                hasContentDescription(RallyScreen.Accounts.name)
+            )
+            .assertExists()
+            .assertIsNotSelected()
+            .performClick()
+            .assertIsSelected()
+        composeTestRule
+            .onNode(
+                hasContentDescription(RallyScreen.Bills.name)
+            )
+            .assertExists()
+            .assertIsNotSelected()
+            .performClick()
+            .assertIsSelected()
+        composeTestRule
+            .onNode(
+                hasContentDescription(RallyScreen.Overview.name)
+            )
+            .assertExists()
+            .assertIsNotSelected()
+            .performClick()
+            .assertIsSelected()
+    }
 }
