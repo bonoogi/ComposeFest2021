@@ -29,7 +29,7 @@ buildscript {
         composeVersion = '1.0.5'
         coreTestingVersion = '2.1.0'
         coroutinesVersion = "1.5.2"
-        espressoVersion = '3.4.0'
+        espressoVersion = '3.5.0-alpha02'
         fragmentVersion = '1.4.0'
         gradleVersion = '7.0.3'
         junitVersion = '4.13.1'
